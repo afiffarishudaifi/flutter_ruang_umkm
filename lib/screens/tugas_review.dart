@@ -124,6 +124,7 @@ class _TugasReviewState extends State<TugasReview> {
                                           children: [
                                             Text(
                                               state.soal![index].soal!,
+                                              textAlign: TextAlign.justify,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1,
@@ -205,8 +206,9 @@ class _TugasReviewState extends State<TugasReview> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
+                                            (curState.komentars[index].aksi=="PESERTA") ? 
                                             curState
-                                                .komentars[index].namaPeserta!,
+                                                .komentars[index].namaPeserta! : "Fasilitator",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodyText1!

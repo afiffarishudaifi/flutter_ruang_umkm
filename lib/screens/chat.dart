@@ -1,19 +1,9 @@
-import 'dart:math';
-
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_course/blocs/chat/chat_bloc.dart';
 import 'package:online_course/blocs/chat/chat_event.dart';
 import 'package:online_course/blocs/chat/chat_state.dart';
-import 'package:online_course/blocs/tugas_submit/tugas_submit_bloc.dart';
-import 'package:online_course/repositories/chat_service.dart';
 import 'package:online_course/utils/constant.dart';
-import 'package:online_course/utils/data.dart';
-import 'package:online_course/widgets/chat_item.dart';
-import 'package:online_course/widgets/custom_textfield.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -30,7 +20,6 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _chatBloc = BlocProvider.of<ChatBloc>(context);
     loadIdUser();

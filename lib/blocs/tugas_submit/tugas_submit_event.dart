@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 abstract class TugasSubmitEvent {}
 
 class TugasSubmitLoadEvent extends TugasSubmitEvent {
@@ -16,8 +14,7 @@ class TugasSubmitChangeJawabanevent extends TugasSubmitEvent {
 
 class TugasSubmitFinishEvent extends TugasSubmitEvent {}
 
-class TugasSubmitFinishSuntingEvent extends TugasSubmitEvent {
-}
+class TugasSubmitFinishSuntingEvent extends TugasSubmitEvent {}
 
 class TugasSubmitLoadSuntingEvent extends TugasSubmitEvent {
   final String slug1;
@@ -25,7 +22,7 @@ class TugasSubmitLoadSuntingEvent extends TugasSubmitEvent {
   TugasSubmitLoadSuntingEvent({required this.slug1, required this.slug2});
 }
 
-class TugasSubmitLoadReviewEvent extends TugasSubmitEvent{
+class TugasSubmitLoadReviewEvent extends TugasSubmitEvent {
   final String slug1;
   final String slug2;
   TugasSubmitLoadReviewEvent({required this.slug1, required this.slug2});

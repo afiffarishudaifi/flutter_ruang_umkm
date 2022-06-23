@@ -7,17 +7,13 @@ import 'package:online_course/blocs/dashboard/dashboard_event.dart';
 import 'package:online_course/blocs/dashboard/dashboard_state.dart';
 import 'package:online_course/screens/kelas_detail.dart';
 import 'package:online_course/theme/color.dart';
-import 'package:online_course/utils/data.dart';
-import 'package:online_course/widgets/category_box.dart';
 import 'package:online_course/widgets/fasilitator.dart';
-import 'package:online_course/widgets/feature_item.dart';
 import 'package:online_course/widgets/icon_circular.dart';
 import 'package:online_course/widgets/kelas_saya_item.dart';
 import 'package:online_course/widgets/loading_card.dart';
 import 'package:online_course/widgets/loading_fasilitator.dart';
 import 'package:online_course/widgets/no_data.dart';
 // import 'package:online_course/widgets/notification_box.dart';
-import 'package:online_course/widgets/recommend_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,7 +26,6 @@ class _HomePageState extends State<HomePage> {
   late DashboardBloc _dashboardBloc;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _dashboardBloc = BlocProvider.of<DashboardBloc>(context);
     _dashboardBloc.add(DashboardLoadEvent());
@@ -253,12 +248,16 @@ class _HomePageState extends State<HomePage> {
               return LoadingCard();
             else
               return GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => KelasDetail(
-                    slug: currentState.kelasTerbaru![index].slug!,
-                  )));
-                },
-                child: KelasSayaItem(kelas: currentState.kelasTerbaru![index]));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => KelasDetail(
+                                  slug: currentState.kelasTerbaru![index].slug!,
+                                )));
+                  },
+                  child:
+                      KelasSayaItem(kelas: currentState.kelasTerbaru![index]));
           }));
     });
   }
@@ -286,12 +285,17 @@ class _HomePageState extends State<HomePage> {
               return LoadingCard();
             else
               return GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => KelasDetail(
-                    slug: currentState.kelasTerpopuler![index].slug!,
-                  )));
-                },
-                child: KelasSayaItem(kelas: currentState.kelasTerpopuler![index]));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => KelasDetail(
+                                  slug: currentState
+                                      .kelasTerpopuler![index].slug!,
+                                )));
+                  },
+                  child: KelasSayaItem(
+                      kelas: currentState.kelasTerpopuler![index]));
           }));
     });
   }
@@ -326,11 +330,17 @@ class _HomePageState extends State<HomePage> {
               return LoadingCard();
             else
               return GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => KelasDetail(
-                    slug: currentState.kelasMendatang![index].slug!,
-                  )));
-                }, child: KelasSayaItem(kelas: currentState.kelasMendatang![index]));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => KelasDetail(
+                                  slug:
+                                      currentState.kelasMendatang![index].slug!,
+                                )));
+                  },
+                  child: KelasSayaItem(
+                      kelas: currentState.kelasMendatang![index]));
           }));
     });
   }
