@@ -1,5 +1,9 @@
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:online_course/blocs/kelas_saya/kelas_bloc.dart';
 import 'package:online_course/blocs/kelas_saya/kelas_bloc_all.dart';
 import 'package:online_course/blocs/kelas_saya/kelas_event.dart';
 import 'package:online_course/blocs/kelas_saya/kelas_state.dart';
@@ -7,6 +11,7 @@ import 'package:online_course/screens/kelas_detail.dart';
 import 'package:online_course/theme/color.dart';
 import 'package:online_course/utils/data.dart';
 import 'package:online_course/widgets/category_item.dart';
+import 'package:online_course/widgets/kelas_pencarian.dart';
 import 'package:online_course/widgets/kelas_saya_item_dua.dart';
 import 'package:online_course/widgets/loading_card.dart';
 import 'package:online_course/widgets/no_data.dart';
@@ -25,6 +30,7 @@ class _ExplorePageState extends State<ExplorePage> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     _kelasBloc = BlocProvider.of<KelasBlocAll>(context);
     _kelasBloc.add(KelasEventLoadAll(page: 1));
@@ -187,8 +193,8 @@ class _ExplorePageState extends State<ExplorePage> {
             child: MediaQuery.removePadding(
               context: context,
               removeTop: true,
-              child: BlocBuilder<KelasBlocAll, KelasState>(
-                  builder: (context, state) {
+              child:
+                  BlocBuilder<KelasBlocAll, KelasState>(builder: (context, state) {
                 int jumlah = 5;
                 KelasStateLoad curState = state as KelasStateLoad;
                 if (!curState.statusLoading) {
@@ -223,14 +229,11 @@ class _ExplorePageState extends State<ExplorePage> {
                           );
                         }
                         return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => KelasDetail(
-                                          slug: state.kelas[index].slug!,
-                                        )));
-                          },
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => KelasDetail(
+                    slug: state.kelas[index].slug!,
+                  )));
+                },
                           child: KelasSayaItemDua(
                             kelas: state.kelas[index],
                           ),

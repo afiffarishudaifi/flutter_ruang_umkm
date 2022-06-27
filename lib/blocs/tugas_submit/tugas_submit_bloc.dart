@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_course/blocs/tugas_submit/tugas_submit_event.dart';
@@ -104,8 +106,7 @@ class TugasSubmitBloc extends Bloc<TugasSubmitEvent, TugasSubmitState> {
         return e.toString();
       }).toList();
 
-      List<TextEditingController> controller =
-          dataSoal['jawaban'].map<TextEditingController>((e) {
+      List<TextEditingController> controller = dataSoal['jawaban'].map<TextEditingController>((e) {
         return TextEditingController(text: e.toString());
       }).toList();
 
@@ -122,7 +123,7 @@ class TugasSubmitBloc extends Bloc<TugasSubmitEvent, TugasSubmitState> {
       }
     });
 
-    on<TugasSubmitLoadReviewEvent>((event, emit) async {
+    on<TugasSubmitLoadReviewEvent>((event, emit) async{
       emit(TugasSubmitLoadingState());
       Map<String, dynamic> data = await TugasService().loadReview(event);
       print(data);
@@ -135,8 +136,7 @@ class TugasSubmitBloc extends Bloc<TugasSubmitEvent, TugasSubmitState> {
         return e.toString();
       }).toList();
 
-      List<TextEditingController> controller =
-          data['jawaban'].map<TextEditingController>((e) {
+      List<TextEditingController> controller = data['jawaban'].map<TextEditingController>((e) {
         return TextEditingController(text: e.toString());
       }).toList();
 

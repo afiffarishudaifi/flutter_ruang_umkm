@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:online_course/blocs/register/register_bloc.dart';
@@ -66,13 +68,13 @@ class _RegisterStep2State extends State<RegisterStep2> {
       print(e.toString());
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocListener<RegisterBloc, RegisterState>(
-      listener: (context, state) {
-        if (state is RegisterFinished) {
-          if (state.errorCode == 0) {
+      listener: (context, state){
+        if(state is RegisterFinished){
+          if(state.errorCode==0){
             Navigator.of(context).pop();
           }
         }
@@ -140,38 +142,23 @@ class _RegisterStep2State extends State<RegisterStep2> {
                     hintText: "Nama Kamu",
                   ),
                 ),
-                BlocBuilder(
-                    builder: (context, state) {
-                      if (state is RegisterFinished) {
-                        if (state.errorCode == 1) {
-                          return Text(
-                            state.errorMessage,
-                            style: TextStyle(color: Colors.red),
-                          );
-                        }
-                      }
-                      return Container();
-                    },
-                    bloc: _blocRegister),
+                BlocBuilder(builder: (context, state) {
+                  if(state is RegisterFinished){
+                    if(state.errorCode==1){
+                      return Text(
+                        state.errorMessage,
+                        style: TextStyle(color: Colors.red),
+                      );
+                    }
+                  }
+                  return Container();
+                }, bloc: _blocRegister),
                 SizedBox(height: 30),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      _blocRegister.add(RegisterButtonPressed(
-                          nama: nama.text,
-                          usaha: widget.usaha,
-                          alamat: widget.alamat,
-                          hp: widget.hp,
-                          email: widget.email,
-                          instagram: widget.instagram,
-                          facebook: widget.facebook,
-                          shopee: widget.shopee,
-                          tokped: widget.tokped,
-                          website: widget.website,
-                          username: widget.username,
-                          password: widget.password,
-                          image: _image));
+                      _blocRegister.add(RegisterButtonPressed(nama: nama.text, usaha: widget.usaha, alamat: widget.alamat, hp: widget.hp, email: widget.email, instagram: widget.instagram, facebook: widget.facebook, shopee: widget.shopee, tokped: widget.tokped, website: widget.website, username: widget.username, password: widget.password, image: _image));
                     },
                     child: Text("Next",
                         style: Theme.of(context).textTheme.bodyText1!.merge(
