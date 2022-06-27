@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:online_course/blocs/login/login_bloc.dart';
 import 'package:online_course/blocs/login/login_event.dart';
 import 'package:online_course/blocs/login/login_state.dart';
@@ -187,20 +188,6 @@ class _LoginState extends State<Login> {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        BlocBuilder<LoginBloc, LoginState>(
-                                          builder: (context, state) {
-                                            if (state is LoginFinished) {
-                                              if (state.errorCode > 0) {
-                                                return Text(
-                                                  "* " + state.errorMessage,
-                                                  style: TextStyle(
-                                                      color: Colors.red),
-                                                );
-                                              }
-                                            }
-                                            return Container();
-                                          },
-                                        ),
                                         TextField(
                                           obscureText: true,
                                           cursorColor: Colors.black,
@@ -215,21 +202,6 @@ class _LoginState extends State<Login> {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        BlocBuilder<LoginBloc, LoginState>(
-                                          builder: (context, state) {
-                                            if (state is LoginFinished) {
-                                              if (state.errorCode > 0) {
-                                                return Text(
-                                                  "* " + state.errorMessage,
-                                                  style: TextStyle(
-                                                      color: Colors.red),
-                                                );
-                                              }
-                                            }
-                                            return Container();
-                                          },
-                                        ),
-                                        SizedBox(height: 20),
                                         SizedBox(
                                           width: double.infinity,
                                           child: ElevatedButton(
@@ -268,11 +240,39 @@ class _LoginState extends State<Login> {
                           ],
                         ),
                       ),
+                      BlocBuilder<LoginBloc, LoginState>(
+                        builder: (context, state) {
+                          if (state is LoginFinished) {
+                            if (state.errorCode > 0) {
+                              Fluttertoast.showToast(
+                                  msg: state.errorMessage,
+                                  toastLength: Toast.LENGTH_LONG,
+                                  gravity: ToastGravity.BOTTOM,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.redAccent,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            }
+                          }
+                          return Container();
+                        },
+                      ),
                     ],
                   ),
                 )
               : Register(),
         ),
+      ),
+    );
+  }
+
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: Text("Username / Password Salah"),
+        action: SnackBarAction(
+            label: 'Kembali', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }
