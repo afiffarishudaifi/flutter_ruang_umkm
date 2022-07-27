@@ -98,19 +98,6 @@ class _TugasSuntingPageState extends State<TugasSuntingPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // BlocBuilder<TugasSubmitBloc, TugasSubmitState>(
-                      //   builder: (context, state) {
-                      //     if (state is TugasSubmitLoadedState) {
-                      //       return Text("Sunting Tugas",
-                      //           style: Theme.of(context).textTheme.subtitle1);
-                      //     }
-                      //     return Text("Tugas",
-                      //         style: Theme.of(context).textTheme.subtitle1);
-                      //   },
-                      // ),
-                      // SizedBox(
-                      //   height: 10,
-                      // ),
                       BlocBuilder<TugasSubmitBloc, TugasSubmitState>(
                         builder: (context, state) {
                           if (state is TugasSubmitLoadedState) {
