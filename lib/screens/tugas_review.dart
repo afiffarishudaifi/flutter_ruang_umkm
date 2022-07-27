@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_course/blocs/komentar/komentar_bloc.dart';
@@ -8,7 +6,6 @@ import 'package:online_course/blocs/komentar/komentar_state.dart';
 import 'package:online_course/blocs/tugas_submit/tugas_submit_bloc.dart';
 import 'package:online_course/blocs/tugas_submit/tugas_submit_event.dart';
 import 'package:online_course/blocs/tugas_submit/tugas_submit_state.dart';
-import 'package:online_course/theme/color.dart';
 
 class TugasReview extends StatefulWidget {
   final String slug;

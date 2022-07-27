@@ -2,11 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:online_course/models/kelas.dart';
 import 'package:online_course/theme/color.dart';
-import 'package:online_course/utils/data.dart';
 
 class KelasSayaItem extends StatelessWidget {
   final Kelas kelas;
-  const KelasSayaItem({Key? key, required this.kelas}): super(key: key);
+  const KelasSayaItem({Key? key, required this.kelas}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,9 @@ class KelasSayaItem extends StatelessWidget {
                       DecorationImage(image: imageProvider, fit: BoxFit.cover),
                 ),
               ),
-              imageUrl: "https://ruangumkm.ilmanaf.com/public/storage/thumbnail_event/original/"+this.kelas.fotoEvent!,
+              imageUrl:
+                  "https://ruangumkm.ilmanaf.com/public/storage/thumbnail_event/original/" +
+                      this.kelas.fotoEvent!,
             ),
           ),
           Positioned(
@@ -92,8 +93,7 @@ class KelasSayaItem extends StatelessWidget {
                       SizedBox(
                         width: 12,
                       ),
-                      getAttribute(
-                          Icons.schedule_rounded, labelColor, "10"),
+                      getAttribute(Icons.schedule_rounded, labelColor, "10"),
                       SizedBox(
                         width: 12,
                       ),

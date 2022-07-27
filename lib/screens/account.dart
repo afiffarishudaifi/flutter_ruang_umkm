@@ -9,7 +9,6 @@ import 'package:online_course/screens/login.dart';
 import 'package:online_course/screens/profile.dart';
 import 'package:online_course/screens/sertifikat.dart';
 import 'package:online_course/theme/color.dart';
-import 'package:online_course/utils/data.dart';
 import 'package:online_course/widgets/custom_image.dart';
 import 'package:online_course/widgets/setting_box.dart';
 import 'package:online_course/widgets/setting_item.dart';

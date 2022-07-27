@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:online_course/blocs/kelas_saya/kelas_bloc.dart';
 import 'package:online_course/blocs/kelas_saya/kelas_event.dart';
 import 'package:online_course/blocs/kelas_saya/kelas_state.dart';
@@ -12,7 +11,6 @@ import 'package:online_course/screens/login.dart';
 import 'package:online_course/theme/color.dart';
 import 'package:online_course/utils/data.dart';
 import 'package:online_course/widgets/category_item.dart';
-import 'package:online_course/widgets/kelas_saya_item.dart';
 import 'package:online_course/widgets/kelas_saya_item_dua.dart';
 import 'package:online_course/widgets/loading_card.dart';
 import 'package:online_course/widgets/no_data.dart';
@@ -42,7 +40,7 @@ class _KelasSayaState extends State<KelasSaya> {
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
-          setState(() {});
+        setState(() {});
         // if(state is LoginFinished){
         // }
         // if(state is LogoutFinished){

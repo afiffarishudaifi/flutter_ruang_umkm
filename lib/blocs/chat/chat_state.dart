@@ -1,5 +1,4 @@
 import 'package:online_course/models/message.dart';
-import 'package:online_course/utils/constant.dart';
 
 abstract class ChatState{}
 

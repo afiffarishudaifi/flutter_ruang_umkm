@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:online_course/widgets/icon_circular.dart';
 import 'package:shimmer/shimmer.dart';
 
 class LoadingHeader extends StatelessWidget {

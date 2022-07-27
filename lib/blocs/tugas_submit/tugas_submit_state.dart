@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:online_course/models/soal.dart';
-import 'package:online_course/models/tugas.dart';
 
 abstract class TugasSubmitState {}
 
 class TugasSubmitLoadingState extends TugasSubmitState {}
 
-class TugasSubmitLoadedState extends TugasSubmitState{
+class TugasSubmitLoadedState extends TugasSubmitState {
   List<Soal>? soal;
   List<dynamic>? jawaban;
   String? judulTugas;
@@ -14,9 +13,19 @@ class TugasSubmitLoadedState extends TugasSubmitState{
   List<String>? jawabanPeserta;
   List<TextEditingController>? jawabanController = [];
 
-  TugasSubmitLoadedState({this.soal, this.jawaban, this.judulTugas, this.idEvent, this.jawabanPeserta, this.jawabanController});
+  TugasSubmitLoadedState(
+      {this.soal,
+      this.jawaban,
+      this.judulTugas,
+      this.idEvent,
+      this.jawabanPeserta,
+      this.jawabanController});
 
-  TugasSubmitLoadedState copyFrom({List<Soal>? soal, List<dynamic>? jawaban, String? judulTugas, int? idEvent}) {
+  TugasSubmitLoadedState copyFrom(
+      {List<Soal>? soal,
+      List<dynamic>? jawaban,
+      String? judulTugas,
+      int? idEvent}) {
     return TugasSubmitLoadedState(
       soal: soal ?? this.soal,
       jawaban: jawaban ?? this.jawaban,
