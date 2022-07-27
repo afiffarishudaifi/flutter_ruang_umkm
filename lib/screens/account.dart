@@ -73,6 +73,7 @@ class _AkunBodyState extends State<AkunBody> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     loginBloc = BlocProvider.of<LoginBloc>(context);

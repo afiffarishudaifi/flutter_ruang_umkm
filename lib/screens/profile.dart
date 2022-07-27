@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,6 +34,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _profileBloc = BlocProvider.of<ProfileBloc>(context);
@@ -308,15 +308,16 @@ class _ProfileState extends State<Profile> {
                                         },
                                       )),
                                   SizedBox(height: 20),
-                                  (_image==null) ? Container() : 
-                                  Center(
-                                    child: CircleAvatar(
-                                      backgroundImage: FileImage(
-                                        _image!,
-                                      ),
-                                      radius: 130,
-                                    ),
-                                  ),
+                                  (_image == null)
+                                      ? Container()
+                                      : Center(
+                                          child: CircleAvatar(
+                                            backgroundImage: FileImage(
+                                              _image!,
+                                            ),
+                                            radius: 130,
+                                          ),
+                                        ),
                                   SizedBox(
                                     height: 10,
                                   ),
@@ -341,7 +342,7 @@ class _ProfileState extends State<Profile> {
                                             tokped: tokped.text,
                                             usaha: usaha.text,
                                             website: website.text,
-                                            image : _image));
+                                            image: _image));
                                       },
                                       child: Text("Simpan",
                                           style: TextStyle(

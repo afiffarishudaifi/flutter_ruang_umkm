@@ -20,6 +20,7 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _chatBloc = BlocProvider.of<ChatBloc>(context);

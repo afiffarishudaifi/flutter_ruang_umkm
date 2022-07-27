@@ -34,6 +34,7 @@ class _TugasPageState extends State<TugasPage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _komentarBloc = BlocProvider.of<KomentarBloc>(context);

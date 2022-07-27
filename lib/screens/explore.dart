@@ -25,6 +25,7 @@ class _ExplorePageState extends State<ExplorePage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _kelasBloc = BlocProvider.of<KelasBlocAll>(context);

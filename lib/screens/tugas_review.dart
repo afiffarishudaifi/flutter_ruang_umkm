@@ -33,6 +33,7 @@ class _TugasReviewState extends State<TugasReview> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _komentarBloc = BlocProvider.of<KomentarBloc>(context);

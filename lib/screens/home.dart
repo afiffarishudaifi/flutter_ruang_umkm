@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   late DashboardBloc _dashboardBloc;
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _dashboardBloc = BlocProvider.of<DashboardBloc>(context);

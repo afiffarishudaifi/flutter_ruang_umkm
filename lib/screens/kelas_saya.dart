@@ -83,6 +83,7 @@ class _KelasState extends State<Kelas> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _kelasBloc = BlocProvider.of<KelasBloc>(context);
