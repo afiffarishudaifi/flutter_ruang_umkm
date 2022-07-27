@@ -29,7 +29,7 @@ class _TugasReviewState extends State<TugasReview> {
   late TugasSubmitBloc _tugasSubmitBloc;
   TextEditingController komentarController = TextEditingController();
 
-  List<TextEditingController> _controller = [];
+  // List<TextEditingController> _controller = [];
 
   @override
   void initState() {

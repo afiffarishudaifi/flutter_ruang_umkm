@@ -30,7 +30,7 @@ class _TugasSuntingPageState extends State<TugasSuntingPage> {
   late TugasSubmitBloc _tugasSubmitBloc;
   TextEditingController komentarController = TextEditingController();
 
-  List<TextEditingController> _controller = [];
+  // List<TextEditingController> _controller = [];
 
   @override
   void initState() {
